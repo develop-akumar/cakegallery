@@ -1,0 +1,38 @@
+<p>cakedetails works!</p>
+
+<h1 style="text-align: center;">Cake Details page</h1>
+<br><br><br>
+
+<div class="row">
+  <div class="col">
+    <img src={{cake.image}}  alt="..." height="600px" width="900px" style="margin-left: 50px;" >
+    
+  </div>
+  <div class="col">
+    <div class="card col-3" style="border: 2px solid red; width: 600px; height: 600px;">
+      
+      <div class="card-body" >
+        <h1 class="card-title" style="color: brown;">{{cake.name}}</h1>
+        <br>
+        <h5 class="card-text">ID - {{cake.cakeid}}</h5>
+        <h5 class="card-text">Flavour - {{cake.flavour}}</h5>
+        <h5 class="card-text">Rating - {{cake.ratings}}</h5>
+        <h5 class="card-text">Reviews - {{cake.reviews}}</h5>
+        <h5 class="card-text">Ingredients - {{cake.ingredients}}</h5>
+        <h5 class="card-text">Desc. - {{cake.description}}</h5>
+
+        <br>
+        <a href="#" class="btn btn-primary">Price - Rs. {{cake.price}}</a>
+        <br><br>
+        <button class="btn btn-success" (click)="add_to_cart()">Add to Cart</button>
+        {{message}}
+      </div>
+    </div>
+  </div>
+
+</div>
+<br><br>
+<div style="margin-left: 600px;">
+  <a class="btn btn-danger" href="/search">Back to Search page</a>
+</div>
+<br><br><br>

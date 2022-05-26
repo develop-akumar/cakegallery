@@ -1,0 +1,20 @@
+<p>carousel works!</p>
+
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel" >
+    <div class="carousel-inner">
+
+      <div *ngFor="let each of data;let i = index">
+        <div *ngIf="i<1" class="carousel-item active">
+          <img src={{each.image}} class="d-block w-100" alt="..." height="600px" >
+        </div>
+      </div>
+
+
+      <div *ngFor="let each of data;let i = index">
+        <div *ngIf="i<4" class="carousel-item">
+          <img src={{each.image}} class="d-block w-100" alt="..." height="600px">
+        </div>
+      </div>
+
+    </div>
+  </div>

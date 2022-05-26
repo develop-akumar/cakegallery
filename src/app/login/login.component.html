@@ -1,0 +1,23 @@
+<p>login works!</p>
+
+
+<div class="mb-3 row">
+    <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
+    <div class="col-sm-10">
+      <input type="text"  [(ngModel)]="login_details.email" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com">
+    </div>
+  </div>
+  <div class="mb-3 row">
+    <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+    <div class="col-sm-10">
+      <input type="password"  [(ngModel)]="login_details.password" class="form-control" id="inputPassword">
+    </div>
+
+    
+
+    <div>
+        <button (click)="login()">Login</button>
+    </div>
+
+    <div *ngIf="message"><h1>{{message}}<br> Redirecting to home page in 5 sec ...</h1></div>
+  </div>

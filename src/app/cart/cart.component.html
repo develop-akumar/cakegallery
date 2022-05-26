@@ -1,0 +1,75 @@
+<br><br><br>
+
+<div>
+
+    <div>
+        <h1 style="text-align: center; COLOR:BLUE">ITEMS PRESENT IN CART </h1>
+    </div>
+    <hr>
+    <br><br><br><br>
+
+    {{message}}
+    <br><br>
+    <div>
+        <table  class="table" style="border: 5px solid brown;">
+            <thead>
+            <tr>
+                <th scope="col"><h4>S. No.</h4></th>
+                <th scope="col"><h4>Image</h4></th>
+                <th scope="col"><h4>Name</h4></th>
+                <th scope="col"><h4>ID</h4></th>
+                <th scope="col"><h4>Date Created</h4></th>
+                <th scope="col"><h4>Quantity</h4></th>
+                <th scope="col"><h4>Price</h4></th>
+                <th scope="col"><h4>Total Price</h4></th>
+                <th scope="col"><h4>Remove Item</h4></th>
+            </tr>
+            </thead>
+            <tbody *ngIf="showtable">
+                <tr *ngFor="let each of datafetched;let i = index ">
+                    <th style="text-align: center; vertical-align: middle;" scope="row">{{i+1}}</th>
+
+                    <td><img src={{each.image}} alt="no image" height="150px" width="150px"><br><br>
+                        <div style="border:2px solid brown; text-align: center;width:150px;height:50px;padding-top: 5px;">
+                            <div>
+                                <button class="btn btn-success" (click)="increaseQty(each.name, each.cakeid, each.price, each.weight, each.image )">+</button> Qty 
+                                <button class="btn btn-warning" (click)="decreaseQty(each.cakeid)">-</button>
+                            </div>
+                        </div>
+                    </td>
+                    
+                    <th style="text-align: center; vertical-align: middle;">{{each.name}}</th>
+                    <th style="text-align: center; vertical-align: middle;">{{each.cakeid}}</th>
+                    <th style="text-align: center; vertical-align: middle;">{{each.createdat}}</th>
+                    
+                    <th style="text-align: center; vertical-align: middle;">{{each.quantity}}</th>
+                    <th style="text-align: center; vertical-align: middle;">{{each.price}}</th>
+                    <th style="text-align: center; vertical-align: middle;">{{each.price*each.quantity}}</th>
+                    <th style="text-align: center; vertical-align: middle;"><button class="btn btn-danger" (click)="removeitem(each.cakeid)">Remove</button></th>
+                    
+                </tr>
+            
+            </tbody>
+
+            <tfoot *ngIf="showtable">
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th><h4>Grand Total</h4></th>
+                <th><h4>to be calculated</h4></th>
+            </tfoot>
+
+        </table>
+
+    </div>
+</div>
+
+<div *ngIf="!(showtable)">
+    <br><br><br>
+    <h2 style="text-align: center;">Cart is empty. Please add item to cart to show here...</h2>
+
+</div>
+
+<br><br><br><br>
